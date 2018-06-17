@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/', 'PagesController@getIndex');
+Route::get('/available', 'PagesController@getAvailable')->name('available');;
+Route::get('/notavailable', 'PagesController@getNotAvailable')->name('notavailable');;
+Route::get('/morethan', 'PagesController@getMoreThan')->name('morethan');;
+
+Route::resource('product', 'ProductController');
